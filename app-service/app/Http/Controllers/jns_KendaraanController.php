@@ -23,30 +23,29 @@ class jns_KendaraanController extends Controller
     public function create()
     {
        //untuk menampilkan form
-       return view('');
+       return view('jnsKendaraan.tambahJnsKendaraan');
     }
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        ///insert ke sql
+        $data = new jns_Kendaraan();
+        $data->nm_jns_kendaraan = $request->jns_kendaraans;
+        $post = $data->save();
+        return redirect('jnskendaraan');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
         //
+        $data = jns_Kendaraan::where('id_jns_kendaraan', '=', $id)->get();
+        return view('jnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
     }
 
     /**
@@ -54,7 +53,11 @@ class jns_KendaraanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data=jns_Kendaraan::where('id_jns_kendaraan', '=', $id);
+        $data->update([
+            'nm_jns_kendaraan' => $request->jns_kendaraans,
+        ]);
+        return redirect('jnskendaraan');
     }
 
     /**
@@ -63,5 +66,8 @@ class jns_KendaraanController extends Controller
     public function destroy(string $id)
     {
         //
+        $data=jns_Kendaraan::where('id_jns_kendaraan', '=', $id);
+        $data->delete();
+        return redirect('jnskendaraan');
     }
 }
