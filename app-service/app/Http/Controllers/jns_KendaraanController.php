@@ -45,7 +45,7 @@ class jns_KendaraanController extends Controller
     {
         //
         $data = jns_Kendaraan::where('id_jns_kendaraan', '=', $id)->get();
-        return view('jnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
+        return view('JnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
     }
 
     /**

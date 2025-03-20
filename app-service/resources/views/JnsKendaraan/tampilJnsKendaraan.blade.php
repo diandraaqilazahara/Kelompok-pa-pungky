@@ -57,9 +57,9 @@
                                 <td>{{$no++}}</td>
                                 <td>{{$row->nm_jns_kendaraan}}</td>
                                 <td>
-                                    <a href="{{route('jnsKendaraan.edit',$row->id_jns_kendaraan)}}">update</a>  
+                                    <a href="{{route('jns_Kendaraan.edit',$row->id_jns_kendaraan)}}">update</a>  
                                     |  
-                                    <a href="{{route('jnsKendaraan.delete',$row->id_jns_kendaraan)}}">delete</a>
+                                    <a href="{{route('jns_Kendaraan.delete',$row->id_jns_kendaraan)}}">delete</a>
                                 </td>
                             </tr>
                             @endforeach
