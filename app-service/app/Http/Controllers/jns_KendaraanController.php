@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\jns_Kendaraan;
 use Illuminate\Http\Request;
 
-use function PHPUnit\Framework\returnSelf;
-
 class jns_KendaraanController extends Controller
 {
     /**
@@ -15,9 +13,8 @@ class jns_KendaraanController extends Controller
     public function index()
     {
         $data = jns_Kendaraan::get();
-        //dd($data);
-        return  view('JnsKendaraan.tampilJnsKendaraan', compact('data'));
-
+        // dd($data);
+        return view('JnsKendaraan.tampilJnsKendaraan', compact('data'));
     }
 
     /**
@@ -25,22 +22,22 @@ class jns_KendaraanController extends Controller
      */
     public function create()
     {
-       //untuk menampilkan form
-       return view('JnsKendaraan.tambahJnsKendaraan');
+        //untuk menampilkan form
+        return view('JnsKendaraan.tambahJnsKendaraan');
     }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        ///insert ke sql
+        // insert ke sql
         $data = new jns_Kendaraan();
         $data->nm_jns_kendaraan = $request->jns_kendaraans;
         $post = $data->save();
-        return redirect('jnskendaraan');
+        return redirect('JnsKendaraan');
     }
 
-    
     /**
      * Show the form for editing the specified resource.
      */
@@ -48,7 +45,7 @@ class jns_KendaraanController extends Controller
     {
         //
         $data = jns_Kendaraan::where('id_jns_kendaraan', '=', $id)->get();
-        return view('JnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
+        return view('jnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
     }
 
     /**
@@ -56,11 +53,12 @@ class jns_KendaraanController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        //
         $data=jns_Kendaraan::where('id_jns_kendaraan', '=', $id);
         $data->update([
-            'nm_jns_kendaraan' => $request->jns_kendaraans,
+            'nm_jns_kendaraan' => $request->jns_kendaraan,
         ]);
-        return redirect('jnskendaraan');
+        return redirect('JnsKendaraan');
     }
 
     /**
@@ -71,6 +69,6 @@ class jns_KendaraanController extends Controller
         //
         $data=jns_Kendaraan::where('id_jns_kendaraan', '=', $id);
         $data->delete();
-        return redirect('jnskendaraan');
+        return redirect('Jnskendaraan');
     }
 }

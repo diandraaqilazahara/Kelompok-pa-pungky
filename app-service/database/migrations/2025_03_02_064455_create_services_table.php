@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id_service');
             $table->bigInteger('id_kendaraan');
-            $table->unsignedInteger('id_jnsservices');
+            $table->unsignedInteger('id_jnsServices');
             $table->bigInteger('id_jns_service');
             $table->text('keluhan');
             $table->date('tgl_masuk');
