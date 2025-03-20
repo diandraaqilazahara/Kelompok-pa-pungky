@@ -22,5 +22,5 @@ Route::get('/jns_Kendaraan', [jns_KendaraanController::class, 'index'])->name('j
 Route::get('/jns_Kendaraan/add', [jns_KendaraanController::class, 'create'])->name('jns_Kendaraan.create');
 Route::post('/jns_Kendaraan/add', [jns_KendaraanController::class, 'store'])->name('jns_Kendaraan.store');
 Route::get('/jns_Kendaraan/edit/{id_jns_kendaraan}', [jns_KendaraanController::class, 'edit'])->name('jns_Kendaraan.edit');
-Route::post('/jns_Kendaraan/edit/{id_jns_kendaraan', [jns_KendaraanController::class, 'update'])->name('jns_Kendaraan.update');
+Route::post('/jns_Kendaraan/update/{id_jns_kendaraan', [jns_KendaraanController::class, 'update'])->name('jns_Kendaraan.update');
 Route::get('/jns_Kendaraan/delete/{id_jns_kendaraan}', [jns_KendaraanController::class, 'destroy'])->name('jns_Kendaraan.delete');
