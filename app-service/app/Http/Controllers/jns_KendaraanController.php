@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\jns_Kendaraan;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\returnSelf;
+
 class jns_KendaraanController extends Controller
 {
     /**
@@ -13,8 +15,9 @@ class jns_KendaraanController extends Controller
     public function index()
     {
         $data = jns_Kendaraan::get();
-        // dd($data);
-        return view('JnsKendaraan.tampilJnsKendaraan', compact('data'));
+        //dd($data);
+        return  view('JnsKendaraan.tampilJnsKendaraan', compact('data'));
+
     }
 
     /**
@@ -23,7 +26,7 @@ class jns_KendaraanController extends Controller
     public function create()
     {
        //untuk menampilkan form
-       return view('jnsKendaraan.tambahJnsKendaraan');
+       return view('JnsKendaraan.tambahJnsKendaraan');
     }
     /**
      * Store a newly created resource in storage.
@@ -45,7 +48,7 @@ class jns_KendaraanController extends Controller
     {
         //
         $data = jns_Kendaraan::where('id_jns_kendaraan', '=', $id)->get();
-        return view('jnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
+        return view('JnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
     }
 
     /**

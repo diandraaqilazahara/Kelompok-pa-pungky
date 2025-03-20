@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id_service');
-            $table->unsignedInteger('id_kendaraan');
-            $table->foreign('id_kendaraan')->references('id_kendaraan')->on('kendaraans');
+            $table->bigInteger('id_kendaraan');
             $table->unsignedInteger('id_jnsservices');
-            $table->foreign('id_jns_service')->references('id_jns_service')->on('jnsservices');
+            $table->bigInteger('id_jns_service');
             $table->text('keluhan');
             $table->date('tgl_masuk');
             $table->date('tgl_keluar');
