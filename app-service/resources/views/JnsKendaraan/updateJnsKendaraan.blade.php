@@ -48,7 +48,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                         <label class="form-label" for="">Nama Jenis Kendaraan</label>
-                        <input type="text" class="form-control" name="jns_Kendaraans" value="{{$row->nm_jns_kendaraan}}" />
+                        <input type="text" class="form-control" name="jns_kendaraan" value="{{$row->nm_jns_kendaraan}}" />
                         </div>
                     </div>
                     <!--end::Body-->

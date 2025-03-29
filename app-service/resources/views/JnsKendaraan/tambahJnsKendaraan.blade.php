@@ -48,7 +48,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                         <label class="form-label" for="">Nama Jenis Kendaraan</label>
-                        <input type="text" class="form-control" name="jns_kendaraans" />
+                        <input type="text" class="form-control" name="jns_kendaraan" />
                         </div>
                     </div>
                     <!--end::Body-->

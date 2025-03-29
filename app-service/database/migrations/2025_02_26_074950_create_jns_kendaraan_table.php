@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jns_kendaraans');
+        Schema::dropIfExists('jns_kendaraan');
     }
 };

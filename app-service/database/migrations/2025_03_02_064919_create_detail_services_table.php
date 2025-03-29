@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_services', function (Blueprint $table) {
+        Schema::create('detail_service', function (Blueprint $table) {
             $table->increments('id_detail_service');
             $table->unsignedInteger('id_service');
-            $table->foreign('id_service')->references('id_service')->on('services');
+            $table->foreign('id_service')->references('id_service')->on('service');
             $table->string('sparepart', 50);
             $table->integer('harga')->unsigned('7');
             $table->timestamps();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detailservices');
+        Schema::dropIfExists('detailservice');
     }
 };

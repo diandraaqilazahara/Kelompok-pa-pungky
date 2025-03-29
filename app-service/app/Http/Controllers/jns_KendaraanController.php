@@ -33,10 +33,10 @@ class jns_KendaraanController extends Controller
     {
         // insert ke sql
         $data = new jns_Kendaraan();
-        $data->nm_jns_kendaraan = $request->jns_kendaraans;
+        $data->nm_jns_kendaraan = $request->jns_kendaraan;
         $post = $data->save();
-        return redirect('JnsKendaraan');
-    }
+        return redirect('jns_Kendaraan');
+    }                                 
 
     /**
      * Show the form for editing the specified resource.
@@ -58,7 +58,7 @@ class jns_KendaraanController extends Controller
         $data->update([
             'nm_jns_kendaraan' => $request->jns_kendaraan,
         ]);
-        return redirect('JnsKendaraan');
+        return redirect('jns_Kendaraan');
     }
 
     /**
@@ -69,6 +69,6 @@ class jns_KendaraanController extends Controller
         //
         $data=jns_Kendaraan::where('id_jns_kendaraan', '=', $id);
         $data->delete();
-        return redirect('Jnskendaraan');
+        return redirect('jns_Kendaraan');
     }
 }
