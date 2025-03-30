@@ -50,28 +50,28 @@
                                             <input type="text" class="form-control" name="no_pol"
                                                 placeholder="Masukkan Nomor Polisi" required
                                             />
-                                            <div class="invalid-feedback">Masukkin No Polisinya, CURANMOR Lu Yee?</div>
+                                            <div class="invalid-feedback">No Polisi</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Tahun Kendaraan</label>
                                             <input type="text" class="form-control" name="tahun_kendaraan"
                                                 placeholder="Masukkan Tahun Kendaraan" required
                                             />
-                                            <div class="invalid-feedback">Lupa? Busehh Tua Bett Motor Luu</div>
+                                            <div class="invalid-feedback">Tahun Kendaraan</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">No Mesin</label>
                                             <input type="text" class="form-control" name="no_mesin"
                                                 placeholder="Masukkan Nomor Mesin" required
                                             />
-                                            <div class="invalid-feedback">Jan Lupa No Mesin Yaa Kakaa ><</div>
+                                            <div class="invalid-feedback">No Mesin</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">No Rangka</label>
                                             <input type="text" class="form-control" name="no_rangka"
                                                 placeholder="Masukkan Nomor Rangka" required
                                             />
-                                            <div class="invalid-feedback">Isi Dulu Dah No Rangkanya</div>
+                                            <div class="invalid-feedback">Isi No Rangka</div>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="pilihCC" class="form-label">Kapasitas Mesin</label>
@@ -103,7 +103,7 @@
                                                 <option>7000</option>
                                                 <option>10000</option>
                                             </select>
-                                            <div class="invalid-feedback">Kapasitas Mesin lu gada disini? Yakali</div>
+                                            <div class="invalid-feedback">Kapasitas Mesin</div>
                                         </div>
                                         <div class="col-md-6">
                                             <fieldset class="row mb-3 w-100">
@@ -119,7 +119,7 @@
                                                             required
                                                         />
                                                         <label class="form-check-label" for="manual">Manual</label>
-                                                        <div class="invalid-feedback position-absolute">Pilih Dulu Ngapa Bangg</div>
+                                                        <div class="invalid-feedback position-absolute">Pilih Data</div>
                                                     </div>
                                                     <div class="form-check">
                                                         <input

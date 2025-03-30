@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\pemilik as ModelsPemilik;
 
 class Pemilik extends Controller
 {
@@ -11,7 +12,9 @@ class Pemilik extends Controller
      */
     public function index()
     {
-        //
+        $data = ModelsPemilik::get();
+            //dd($data);
+            return view('Pemilik.tampilPemilik',compact('data'));
     }
 
     /**
@@ -19,7 +22,8 @@ class Pemilik extends Controller
      */
     public function create()
     {
-        //
+        //untuk menampilkan form
+        return view('Pemilik.tambahPemilik');
     }
 
     /**
@@ -27,23 +31,26 @@ class Pemilik extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // insert ke sql
+        $data = new ModelsPemilik();
+        $data->nm_pemilik = $request->nm_pemilik;
+        $data->tgl_lahir = $request->tgl_lahir;
+        $data->alamat = $request->alamat;
+        $data->nik = $request->nik;
+        $data->no_hp = $request->no_hp;
+        $data->save();
+        return redirect('Pemilik');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        $data = ModelsPemilik::where('id_pemilik', '=', $id)->get();
+        return view('Pemilik.updatePemilik', compact('data', 'id'));
     }
 
     /**
@@ -51,7 +58,15 @@ class Pemilik extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = ModelsPemilik::where('id_pemilik', '=', $id);
+        $data->update([
+            'nm_pemilik' => $request->nm_pemilik,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat,
+            'nik' => $request->nik,
+            'no_hp' => $request->no_hp,
+          ]);
+          return redirect('Pemilik');
     }
 
     /**
@@ -59,6 +74,8 @@ class Pemilik extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data=ModelsPemilik::where('id_pemilik', '=', $id);
+        $data->delete();
+        return redirect('Pemilik');
     }
 }

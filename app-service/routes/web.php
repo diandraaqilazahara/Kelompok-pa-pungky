@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\jns_KendaraanController;
 use App\Http\Controllers\Kendaraan;
+use App\Http\Controllers\Pemilik;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,4 +36,10 @@ Route::get('/Kendaraan/edit/{id_kendaraan}', [Kendaraan::class, 'edit'])->name('
 Route::post('/Kendaraan/update/{id_kendaraan}', [Kendaraan::class, 'update'])->name('Kendaraan.update');
 Route::get('/Kendaraan/delete/{id_kendaraan}', [Kendaraan::class, 'destroy'])->name('Kendaraan.delete');
 
-
+//route pemilik
+Route::get('/Pemilik', [Pemilik::class, 'index'])->name('Pemilik.index');
+Route::get('/Pemilik/add', [Pemilik::class, 'create'])->name('Pemilik.create');
+Route::post('/Pemilik/add', [Pemilik::class, 'store'])->name('Pemilik.store');
+Route::get('/Pemilik/edit/{id_pemilik}', [Pemilik::class, 'edit'])->name('Pemilik.edit');
+Route::post('/Pemilik/update/{id_pemilik}', [Pemilik::class, 'update'])->name('Pemilik.update');
+Route::get('/Pemilik/delete/{id_pemilik}', [Pemilik::class, 'destroy'])->name('Pemilik.delete');
