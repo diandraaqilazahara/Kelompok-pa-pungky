@@ -69,7 +69,7 @@ Route::get('/jns_service', [jns_service::class, 'index'])->name('jns_service.ind
 Route::get('/jns_service/add', [jns_service::class, 'create'])->name('jns_service.create');
 Route::post('/jns_service/add', [jns_service::class, 'store'])->name('jns_service.store');
 Route::get('/jns_service/edit/{id_jns_service}', [jns_service::class, 'edit'])->name('jns_service.edit');
-Route::post('/jns_service/update/{id_jns_service}', [jns_service::class, 'update'])->name('jns_service.update');
+Route::post('/mekanik/update/{id_jns_service}', [jns_service::class, 'update'])->name('jns_service.update');
 Route::get('/jns_service/delete/{id_jns_service}', [jns_service::class, 'destroy'])->name('jns_service.delete');
 
 //route service
