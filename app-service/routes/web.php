@@ -3,6 +3,7 @@
 use App\Http\Controllers\jns_KendaraanController;
 use App\Http\Controllers\Kendaraan;
 use App\Http\Controllers\Pemilik;
+use App\Http\Controllers\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +44,12 @@ Route::post('/Pemilik/add', [Pemilik::class, 'store'])->name('Pemilik.store');
 Route::get('/Pemilik/edit/{id_pemilik}', [Pemilik::class, 'edit'])->name('Pemilik.edit');
 Route::post('/Pemilik/update/{id_pemilik}', [Pemilik::class, 'update'])->name('Pemilik.update');
 Route::get('/Pemilik/delete/{id_pemilik}', [Pemilik::class, 'destroy'])->name('Pemilik.delete');
+
+
+//route service
+Route::get('/Service', [Service::class, 'index'])->name('Service.index');
+Route::get('/Service/add', [Service::class, 'create'])->name('Service.create');
+Route::post('/Service/add', [Service::class, 'store'])->name('Service.store');
+Route::get('/Service/edit/{id_Service}', [Service::class, 'edit'])->name('Service.edit');
+Route::post('/Service/update/{id_Service}', [Service::class, 'update'])->name('Service.update');
+Route::get('/Service/delete/{id_Service }', [Service::class, 'destroy'])->name('Service.delete');

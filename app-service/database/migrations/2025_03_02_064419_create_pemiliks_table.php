@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pemilik', function (Blueprint $table) {
             $table->increments('id_pemilik');
             $table->string('nm_pemilik')->default(50);
-            $table->date('tgl_lahir');
+            $table->dateTime('tgl_lahir');
             $table->text('alamat');
             $table->string('nik')->unique(16);
             $table->string('no_hp')->unique(13);
