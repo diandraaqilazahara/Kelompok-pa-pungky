@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Data;
 use App\Http\Controllers\jns_KendaraanController;
 use App\Http\Controllers\Kendaraan;
 use App\Http\Controllers\Pemilik;
@@ -53,3 +54,5 @@ Route::post('/Service/add', [Service::class, 'store'])->name('Service.store');
 Route::get('/Service/edit/{id_Service}', [Service::class, 'edit'])->name('Service.edit');
 Route::post('/Service/update/{id_Service}', [Service::class, 'update'])->name('Service.update');
 Route::get('/Service/delete/{id_Service }', [Service::class, 'destroy'])->name('Service.delete');
+
+Route::get('/user', [Data::class, 'index'])->name('Data.index');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class Data extends Controller
 {
@@ -15,7 +16,7 @@ class Data extends Controller
         
         $users = $response->json();
         
-        return view('users.users', ['users' => $users]);
+        return view('Data.tampilData', ['users' => $users]);
     }
 
     /**
